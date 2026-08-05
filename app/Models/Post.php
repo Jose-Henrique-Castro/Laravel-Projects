@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Post extends Model
 {
@@ -12,4 +13,13 @@ class Post extends Model
         'content',
         'user_id',
     ];
+
+        // Um Post pertence a um User ( Relacionamento entre classes )
+
+        public function User(){
+
+            return $this->belongsTo(User::class);
+
+        }
+
 }
