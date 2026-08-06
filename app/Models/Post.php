@@ -11,10 +11,11 @@ class Post extends Model
 
    protected $fillable = [
         'content',
+        'image_path',
         'user_id',
     ];
 
-        // Um Post pertence a um User ( Relacionamento entre classes )
+        // A Post belongs to a User ( relationship between classes)
 
         public function User(){
 
