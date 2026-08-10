@@ -15,7 +15,7 @@ public function showRegister(){ return view('auto.register'); }
 
 public function showLogin() { return view('auto.login'); } // metods to return the views 
 
-public function Register(Request $request) { 
+public function register(Request $request) { 
 
     $validated = $request->validate([
 
