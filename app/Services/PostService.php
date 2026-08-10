@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 class PostService
 {
     
-    public function getAllPosts(){ // return the posts of an user by latest publicated first
+    public function getAllPosts(){ // return the posts by latest publicated first
 
     return Post::with('user')->latest()->get();
 
