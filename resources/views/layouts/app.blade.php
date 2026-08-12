@@ -8,7 +8,7 @@
 </head>
 <body>
 
-        <header>
+        <header class="container">
             <nav> {{-- navigation -> menu used to navegate the website --}} 
 
             <ul>
