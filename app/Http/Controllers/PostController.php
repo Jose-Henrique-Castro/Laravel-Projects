@@ -47,7 +47,7 @@ class PostController extends Controller
 
     $this->postService->deletePost($post);
 
-    return redirect()->route('post.index');
+    return redirect()->route('posts.index');
 
     }
 
