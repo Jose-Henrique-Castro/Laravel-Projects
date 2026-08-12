@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Services;
-use app\Models\Post;
+use App\Models\Post;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
