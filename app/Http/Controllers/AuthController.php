@@ -20,7 +20,7 @@ public function register(Request $request) {
     $validated = $request->validate([
 
         'name' => ['required','string','max:255'],
-        'email' => ['required','string','unique:user,email'],
+        'email' => ['required','string','unique:users,email'],
         'password' => ['required','confirmed','min:8'],
 
     ]);
