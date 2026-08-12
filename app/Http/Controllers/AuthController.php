@@ -36,7 +36,7 @@ public function login(Request $request){
     $validated = $request->validate([
 
     'email' => ['required','email'],
-    'passoword' => ['required'],
+    'password' => ['required'],
 
     ]);
 
