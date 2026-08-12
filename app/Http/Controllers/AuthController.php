@@ -11,9 +11,9 @@ class AuthController extends Controller
 
 public function __construct( private AuthService $authservice ) {} // inject the AuthService
 
-public function showRegister(){ return view('register'); }
+public function showRegister(){ return view('auth.register'); }
 
-public function showLogin() { return view('login'); } // metods to return the views 
+public function showLogin() { return view('auth.login'); } // metods to return the views 
 
 public function register(Request $request) { 
 
