@@ -2,7 +2,7 @@
 
 namespace App\Services;
 use Illuminate\Support\Facades\Hash;
-use app\Models\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class AuthService
