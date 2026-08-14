@@ -2,6 +2,8 @@
 
 @section('content')
 
+    <h1 style="text-align: center; margin-bottom: 100px;">🔥 𝖅𝖊𝖗𝖔-𝕸𝖊𝖎𝖆2 𝕾𝖖𝖚𝖆𝖉 🔥</h1>
+
     <article style="margin-bottom: 40px;">
         <header>
             <h3>Create a new Post</h3>
@@ -27,14 +29,14 @@
             
             <header>
                 <strong>{{ $post->user->name }}</strong>
-                <small style="float: right;">{{ $post->created_at->format('d/m/Y H:i') }}</small>
+                <small style="float: right;">{{ $post->created_at->diffForHumans() }}</small>
             </header>
 
             <p>{{ $post->content }}</p>
 
             @if ($post->image_path)
                 <img 
-                    src="{{ asset('storage/' . $post->image_path) }}" 
+                    src="{{ asset('storage/' . $post->image_path) }}" {{-- the tunnel between private storage and the public one  --}}
                     alt="Imagem da postagem" 
                     style="max-width: 100%; border-radius: 8px; margin-top: 10px;"
                 >

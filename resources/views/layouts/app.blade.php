@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Aplication</title>
+    <title>{{config('app.name')}}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
@@ -21,8 +21,13 @@
                     </li>
                     @else {{-- if the user is not authenticated, show the following menu items --}} 
 
+                    @if(!Route::is('login')) {{-- if the current route is not login, show the login link --}}
                     <li><a href="{{ route('login') }}" role="button" class="outline">Login</a></li>
+                    @endif
+
+                    @if(!Route::is('register')) {{-- if the current route is not register, show the register link --}}
                     <li><a href="{{ route('register') }}" role="button" class="outline">Register</a></li>
+                    @endif
 
                     @endauth
             </ul>
