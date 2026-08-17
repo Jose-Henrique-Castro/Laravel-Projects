@@ -30,11 +30,11 @@ class PostController extends Controller
 
     'content' => ['required','string'],
     'image' => ['nullable','image','max:2048'],
-    'video' => ['nullable|mimes:mp4,mov,avi|max:20480'],
+    'video'   => ['nullable', 'mimes:mp4,mov,avi', 'max:20480'],
 
     ]);
 
-    $this->postService->createPost($validated,$request->file('image')); // laravel search the file 'image' and send by parameter
+    $this->postService->createPost($validated,$request->file('image'),$request->file('video')); // laravel search the file 'image' and send by parameter
     
     return redirect()->route('posts.index');
 
