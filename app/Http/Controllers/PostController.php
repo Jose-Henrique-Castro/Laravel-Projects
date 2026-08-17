@@ -51,5 +51,21 @@ class PostController extends Controller
 
     }
 
+    public function edit(Post $post){
+
+        abort_unless(Auth::id() == $post->user_id,403);
+
+        return view('posts.edit',compact('post'));
+
+    }
+
+    public function update (Request $request,Post $post){
+
+        abort_unless(Auth::id() == $post->user_id,403);
+        $post->update($request->validate(['content'=>'required|string']));
+        return redirect()->route('posts.index');
+        
+    }
+
 
 }
