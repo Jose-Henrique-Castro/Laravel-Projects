@@ -30,6 +30,7 @@ class PostController extends Controller
 
     'content' => ['required','string'],
     'image' => ['nullable','image','max:2048'],
+    'video' => ['nullable|mimes:mp4,mov,avi|max:20480'],
 
     ]);
 
@@ -64,7 +65,7 @@ class PostController extends Controller
         abort_unless(Auth::id() == $post->user_id,403);
         $post->update($request->validate(['content'=>'required|string']));
         return redirect()->route('posts.index');
-        
+
     }
 
 
