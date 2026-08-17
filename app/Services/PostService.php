@@ -16,7 +16,7 @@ class PostService
     }
 
 
-    public function createPost(array $data , $imageFile = null ) {
+    public function createPost(array $data , $imageFile = null , $videoFile = null) {
 
         $imagePath = null; // start with null and verify if the image exists 
 
@@ -24,11 +24,15 @@ class PostService
             $imagePath = $imageFile->store('posts','public');
         }
 
+        if($videoFile){
+            $videoPath = $videoFile->store('posts','public');
+        }
 
         return Post::create([ // create the post 
 
         'content' => $data['content'],
         'image_path' => $imagePath,
+        'video_path' => $videoPath,
         'user_id' => Auth::id(),
 
         ]);
@@ -40,6 +44,10 @@ class PostService
 
     if($post->image_path){ // if an image exist in the post , delete it
         storage::disk('public') -> delete($post->image_path);
+    }
+
+    if($post->video_path){
+        storage::disk('public') -> delete($post->video_path);
     }
 
     $post->delete(); // delete the post
