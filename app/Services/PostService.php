@@ -11,7 +11,7 @@ class PostService
     
     public function getAllPosts(){ // return the posts by latest publicated first
 
-    return Post::with('user')->latest()->get();
+    return Post::with(['user','likes','comments.user'])->latest()->get();
 
     }
 
