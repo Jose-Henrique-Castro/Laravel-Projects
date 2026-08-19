@@ -10,7 +10,7 @@ class ProfileService
 
     $avatarPath = $user->avatar_path;
 
-    if($avatarPath){
+    if($avatarFile){
 
         if($user->avatar_path){
 

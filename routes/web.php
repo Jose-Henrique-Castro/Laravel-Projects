@@ -33,7 +33,7 @@ Route::delete('/posts/{post}',[PostController::class,'destroy'])->name('posts.de
 
 Route::post('/logout',[AuthController::class,'logout'])->name('logout');
 
-Route::resource('profiles',ProfileController::class)->only(['show','edit','update']); 
+Route::resource('profiles',ProfileController::class)->parameters(['profiles' => 'user'])->only(['show','edit','update']); 
 
 Route::post('/posts/{post}/comments',[CommentController::class,'store'])->name('posts.comment');
 

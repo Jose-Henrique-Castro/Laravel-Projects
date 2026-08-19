@@ -21,7 +21,7 @@
 
             <hgroup>
                 <h2>{{ $user->name }}</h2>
-                <p>Membro desde {{ $user->created_at->format('M/Y') }}</p>
+                <p>Membro desde {{ $user->created_at?->format('M/Y') ?? 'Data desconhecida' }}</p>
             </hgroup>
 
             <!-- Botão de editar aparece apenas se o perfil for do usuário logado -->

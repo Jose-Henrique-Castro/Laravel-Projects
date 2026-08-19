@@ -9,7 +9,7 @@ class CommentService
 {
     public function createComment(Post $post,array $data){
 
-        return $post->comment()->create([
+        return $post->comments()->create([
 
             'content' => $data['content'],
             'user_id' => Auth::id(),

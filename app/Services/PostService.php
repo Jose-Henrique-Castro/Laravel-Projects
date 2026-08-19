@@ -31,8 +31,8 @@ class PostService
         return Post::create([ // create the post 
 
         'content' => $data['content'],
-        'image_path' => $imagePath,
-        'video_path' => $videoPath,
+        'image_path' => $imagePath ?? null,
+        'video_path' => $videoPath ?? null,
         'user_id' => Auth::id(),
 
         ]);

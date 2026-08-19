@@ -25,7 +25,7 @@ public function __construct(
 
     public function edit(User $user){
 
-        abort_unless(Auth::id == $user->id,403);
+        abort_unless(Auth::id() == $user->id,403);
 
         return view('profiles.edit',compact('user'));
 
